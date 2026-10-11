@@ -14,7 +14,7 @@ Experimental results demonstrate successful object detection, coordinate estimat
 ## 1. Introduction
 
 Human-robot interaction in manipulation tasks can be simplified using natural language commands. This project implements a practical end-to-end prototype where a user speaks an object command (for example, “red cube”), and the robot identifies the object, computes a corresponding grasp target, and executes a pick-and-place routine.
-![[Pasted image 20260226124136.png|500]]
+![](image.png)
 Phase 1 focuses on establishing a stable perception-to-action pipeline for a fixed-base arm. The work combines:
 
 - Speech command interpretation,
@@ -48,7 +48,7 @@ The specific requirements are:
 - gTTS + playsound for spoken feedback.
 - pyserial for serial command forwarding.
 ### 3.3 ROS 2 Node Topology
-![[ChatGPT Image Feb 26, 2026, 12_30_24 PM.png]]
+![](<node topology.png>)
 Core execution pipeline:
 1. `object_detection` publishes `detected_objects` (`std_msgs/String`).
 2. `speech_brain_node` (`stt`) subscribes to detected labels and publishes `pick_coordinates` (`geometry_msgs/PoseArray`).
