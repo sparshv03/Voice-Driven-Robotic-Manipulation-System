@@ -1,13 +1,15 @@
-![System overview](src/rtk/image.png)
 # Voice-Driven Robotic Manipulation System
 
 A ROS 2 pipeline that turns a spoken command such as *"red cube"* into a physical pick-and-place action. It combines speech recognition, calibrated monocular vision, grid-based inverse kinematics and serial servo control on a fixed-base robotic arm.
 
 **Team 1, Advanced Mechatronics:** Sparsh & Ritika
 
+## Demo
 
+https://github.com/user-attachments/assets/255bde03-cc5c-425c-bcd2-115d1d83d721
 
 ## Overview
+![System overview](src/rtk/image.png)
 
 A calibrated USB camera (IC840) is mounted above the workspace. Objects of known geometry (red/blue cubes and cylinders) are detected by colour segmentation and contour-based shape classification. Detections are mapped to planar workspace coordinates through an ArUco-marker homography. When the user names an object, the system looks it up among the detections, computes joint step commands and drives the arm through a staged pick-and-place routine over serial.
 
@@ -46,9 +48,7 @@ Phase 1 goals:
 | 4 | `serial_step_bridge` | `joint_steps_abs` | serial `J:x,x,x,x,x,x` to controller |
 
 `manual_control` and `steps_terminal_input` can publish `joint_steps_abs` directly for testing. `joint_state_publisher_gui`, `robot_state_publisher` and `rviz2` provide visualization of the arm model.
-## Demo
 
-https://github.com/user-attachments/assets/255bde03-cc5c-425c-bcd2-115d1d83d721
 
 
 ## How it works
